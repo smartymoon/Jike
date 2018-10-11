@@ -1,4 +1,4 @@
-class Link:
+class DoubleLink:
     def __init__(self):
         self.head = self.tail = None
         self.length = 0
