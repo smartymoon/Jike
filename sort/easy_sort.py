@@ -1,20 +1,9 @@
 """
 最简单的排序：n方,适用数据量小
-插入排序： 从前向后排,在已排区域找个合适的位置,稳定
-选择排序： 从前向后排,在未排区找个合适的元素放在前面,不稳定
-冒泡排序： 两两比较，每轮找到一个最大的放在最后,从后向前排,稳定
+插入排序： 从前向后排,在已排区域找个合适的位置,稳定, 运气好时是 n
+冒泡排序： 两两比较，每轮找到一个最大的放在最后,从后向前排,稳定, 运气好时是 n
+选择排序： 从前向后排,在未排区找个合适的元素放在前面,不稳定,很垃圾 一直是 n 方
 """
-
-
-def bubble_sort(data):
-    if len(data) <= 1: return
-    for i in range(len(data) - 1):
-        has_swap = False
-        for j in range(len(data) - i - 1):
-            if data[j] > data[j + 1]:
-                data[j], data[j + 1] = data[j + 1], data[j]
-                has_swap = True
-        if not has_swap: break
 
 
 def insertion_sort(data):
@@ -28,6 +17,17 @@ def insertion_sort(data):
             data[j + 1] = data[j]
             j -= 1
         data[j + 1] = current
+
+
+def bubble_sort(data):
+    if len(data) <= 1: return
+    for i in range(len(data) - 1):
+        has_swap = False
+        for j in range(len(data) - i - 1):
+            if data[j] > data[j + 1]:
+                data[j], data[j + 1] = data[j + 1], data[j]
+                has_swap = True
+        if not has_swap: break
 
 
 def selection_sort(data):
